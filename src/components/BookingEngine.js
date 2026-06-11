@@ -66,6 +66,8 @@ export default function BookingEngine() {
   const [searched, setSearched] = useState(false);
   const [bookedRoom, setBookedRoom] = useState(null);
   const [pricingInfo, setPricingInfo] = useState({});
+  const [guestName, setGuestName] = useState("");
+  const [specialRequests, setSpecialRequests] = useState("");
 
   const totalGuests = parseInt(adults) + parseInt(children);
 
@@ -337,33 +339,107 @@ export default function BookingEngine() {
       {/* Booking Confirmation Dialog */}
       {bookedRoom && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm transition-opacity duration-300">
-          <div className="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative border border-stone-200 animate-in zoom-in-95 slide-in-from-bottom-8 duration-300">
+          <div className="bg-white rounded-3xl max-w-xl w-full p-8 shadow-2xl relative border border-stone-200 animate-in zoom-in-95 slide-in-from-bottom-8 duration-300 overflow-y-auto max-h-[90vh]">
             <button
-              onClick={() => setBookedRoom(null)}
+              onClick={() => {
+                setBookedRoom(null);
+                setGuestName("");
+                setSpecialRequests("");
+              }}
               className="absolute top-4 right-4 text-stone-400 hover:text-stone-600 transition-colors w-8 h-8 rounded-full flex items-center justify-center hover:bg-stone-100"
             >
               ✕
             </button>
-            <span className="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4 animate-bounce">
-              ¡Tarifas de Booking.com Aplicadas!
-            </span>
-            <h4 className="text-xl font-bold text-stone-900 mb-2">{bookedRoom.name}</h4>
-            <p className="text-sm text-stone-600 mb-6">
-              Reserva para **{bookedRoom.name}** desde el **{checkIn}** al **{checkOut}** ({pricingInfo.nights} {pricingInfo.nights === 1 ? "noche" : "noches"}) para **{totalGuests}** {totalGuests === 1 ? "persona" : "personas"}.
-            </p>
 
-            <div className="bg-stone-50 rounded-2xl p-4 mb-6 border border-stone-200">
-              <div className="flex justify-between text-sm text-stone-600 mb-2">
+            <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-950 text-[10px] font-bold uppercase tracking-wider mb-4">
+              🏷️ Tarifa Especial Booking.com
+            </span>
+            
+            <h4 className="text-xl font-bold text-stone-900 mb-6">Detalles de la Solicitud</h4>
+
+            {/* Premium Voucher Layout */}
+            <div className="border border-stone-200 rounded-2xl overflow-hidden mb-6 bg-stone-50/50">
+              <div className="bg-emerald-900/5 px-4 py-3 border-b border-stone-200">
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                  Resumen de Estancia
+                </span>
+              </div>
+              <div className="p-4 flex flex-col gap-3 text-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-stone-500 text-xs">Habitación:</span>
+                  <span className="font-semibold text-stone-800 text-right max-w-[70%]">{bookedRoom.name}</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4 border-t border-stone-200/60 pt-3">
+                  <div>
+                    <span className="text-stone-500 text-[10px] uppercase tracking-wider block">Entrada</span>
+                    <span className="font-medium text-stone-800">{checkIn}</span>
+                  </div>
+                  <div>
+                    <span className="text-stone-500 text-[10px] uppercase tracking-wider block">Salida</span>
+                    <span className="font-medium text-stone-800">{checkOut}</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4 border-t border-stone-200/60 pt-3">
+                  <div>
+                    <span className="text-stone-500 text-[10px] uppercase tracking-wider block">Duración</span>
+                    <span className="font-medium text-stone-800">
+                      {pricingInfo.nights} {pricingInfo.nights === 1 ? "noche" : "noches"}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-stone-500 text-[10px] uppercase tracking-wider block">Huéspedes</span>
+                    <span className="font-medium text-stone-800">
+                      {adults} Adulto(s) {parseInt(children) > 0 ? `y ${children} Niño(s)` : ""}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Input Details */}
+            <div className="flex flex-col gap-4 mb-6">
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="guest-name" className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+                  Nombre y Apellido
+                </label>
+                <input
+                  type="text"
+                  id="guest-name"
+                  value={guestName}
+                  onChange={(e) => setGuestName(e.target.value)}
+                  placeholder="Ingrese el nombre del titular"
+                  className="h-11 px-4 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm bg-stone-50"
+                  required
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="special-req" className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+                  Pedidos Especiales (Opcional)
+                </label>
+                <textarea
+                  id="special-req"
+                  value={specialRequests}
+                  onChange={(e) => setSpecialRequests(e.target.value)}
+                  placeholder="Ej: Camas separadas, cuna para bebé, llegada tardía..."
+                  className="p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm bg-stone-50 resize-none h-16"
+                />
+              </div>
+            </div>
+
+            {/* Pricing Section */}
+            <div className="bg-emerald-950 text-white rounded-2xl p-5 mb-6 shadow-md">
+              <div className="flex justify-between text-xs text-stone-300 mb-1.5">
                 <span>Precio regular:</span>
                 <span className="line-through">${bookedRoom.pricing.totalOriginal} USD</span>
               </div>
-              <div className="flex justify-between text-sm text-stone-600 mb-2 text-amber-800">
-                <span>Descuentos Booking (Genius + Temp):</span>
-                <span className="font-semibold">-${bookedRoom.pricing.savings} USD</span>
+              <div className="flex justify-between text-xs text-emerald-300 mb-3">
+                <span>Ahorro Booking.com (Genius 15%):</span>
+                <span>-${bookedRoom.pricing.savings} USD</span>
               </div>
-              <div className="flex justify-between text-base font-bold text-stone-900 border-t border-stone-200 pt-3">
-                <span>Total Final:</span>
-                <span className="text-emerald-800 text-lg">
+              <div className="flex justify-between items-center text-sm font-bold border-t border-white/10 pt-3">
+                <span>Tarifa Final Estimada:</span>
+                <span className="text-amber-300 text-xl font-extrabold">
                   ${bookedRoom.pricing.totalDiscounted} USD
                 </span>
               </div>
@@ -372,38 +448,57 @@ export default function BookingEngine() {
             <div className="flex gap-4">
               <button
                 onClick={() => {
+                  if (!guestName.trim()) {
+                    alert("Por favor ingrese su Nombre y Apellido para la solicitud.");
+                    return;
+                  }
+
+                  const estimatedNights = Math.ceil((new Date(checkOut) - new Date(checkIn)) / (1000 * 60 * 60 * 24));
+                  const estimatedTotal = bookedRoom.pricing.totalDiscounted;
+                  
                   const messageText = `Hola! Deseo realizar una reserva en Los Cocos de Vichayito.
 
-He cotizado en la web con descuentos aplicados de Booking.com:
+Titular de la Solicitud:
+- Nombre: ${guestName.trim()}
+
+Detalles de la cotización (Web con Tarifas Booking.com):
 - Habitación: ${bookedRoom.name}
 - Fecha de Llegada: ${checkIn}
 - Fecha de Salida: ${checkOut}
 - Noches: ${pricingInfo.nights}
 - Huéspedes: ${adults} Adulto(s) ${parseInt(children) > 0 ? `y ${children} Niño(s)` : ""}
 - Precio Regular Total: $${bookedRoom.pricing.totalOriginal} USD
-- Descuento Genius / Promos: -$${bookedRoom.pricing.savings} USD
-- Total Tarifa Final: $${bookedRoom.pricing.totalDiscounted} USD
-
+- Ahorro Descuentos: -$${bookedRoom.pricing.savings} USD
+- Total Tarifa Final: $${estimatedTotal} USD
+${specialRequests.trim() ? `- Pedidos Especiales: ${specialRequests.trim()}\n` : ""}
 Por favor confirmar disponibilidad.`;
 
                   const whatsappUrl = `https://wa.me/51963432773?text=${encodeURIComponent(messageText)}`;
                   window.open(whatsappUrl, "_blank");
+                  
+                  // Reset states and close modal
                   setBookedRoom(null);
+                  setGuestName("");
+                  setSpecialRequests("");
                 }}
-                className="flex-1 py-3 bg-emerald-800 hover:bg-emerald-950 text-white rounded-xl font-semibold text-sm text-center shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+                className="flex-1 py-3 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl font-semibold text-sm text-center shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
               >
-                Enviar Solicitud por WhatsApp
+                Solicitar Reserva por WhatsApp
               </button>
               <button
-                onClick={() => setBookedRoom(null)}
+                onClick={() => {
+                  setBookedRoom(null);
+                  setGuestName("");
+                  setSpecialRequests("");
+                }}
                 className="px-6 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-semibold text-sm transition-colors"
               >
-                Atrás
+                Cancelar
               </button>
             </div>
             
-            <p className="text-[10px] text-stone-400 text-center mt-4 leading-relaxed">
-              * El mensaje pre-estructurado con los descuentos de Booking se enviará a nuestro canal oficial de WhatsApp.
+            <p className="text-[9px] text-stone-400 text-center mt-4 leading-relaxed">
+              * La confirmación de disponibilidad se gestiona por WhatsApp. No se realiza ningún cobro en este sitio web.
             </p>
           </div>
         </div>
