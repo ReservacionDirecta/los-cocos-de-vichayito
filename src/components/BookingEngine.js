@@ -282,12 +282,16 @@ export default function BookingEngine() {
                       alt={room.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-4 right-4 bg-emerald-800 text-white text-sm font-bold px-4 py-2 rounded-full shadow-md flex items-center gap-1.5 transition-transform duration-300 group-hover:scale-105">
-                      <span className="line-through text-stone-300/80 font-normal text-xs">
-                        ${room.pricing.originalPricePerNight}
-                      </span>
-                      <span>${room.pricing.discountedPricePerNight}</span>
-                      <span className="text-[10px] font-normal">/ noche</span>
+                    <div className="absolute top-4 right-4 bg-emerald-800 text-white text-xs md:text-sm font-bold px-4 py-2 rounded-full shadow-md flex flex-col items-end gap-0.5 transition-transform duration-300 group-hover:scale-105">
+                      <div className="flex items-center gap-1.5">
+                        <span className="line-through text-stone-300/80 font-normal text-[10px]">
+                          ${room.pricing.originalPricePerNight}
+                        </span>
+                        <span>${room.pricing.discountedPricePerNight} USD</span>
+                      </div>
+                      <div className="text-[10px] text-amber-300 font-semibold">
+                        S/ {Math.round(room.pricing.discountedPricePerNight * 3.6)} PEN
+                      </div>
                     </div>
                   </div>
                   
@@ -428,20 +432,25 @@ export default function BookingEngine() {
             </div>
 
             {/* Pricing Section */}
-            <div className="bg-emerald-950 text-white rounded-2xl p-5 mb-6 shadow-md">
-              <div className="flex justify-between text-xs text-stone-300 mb-1.5">
+            <div className="bg-emerald-950 text-white rounded-2xl p-5 mb-6 shadow-md flex flex-col gap-1.5">
+              <div className="flex justify-between text-xs text-stone-300">
                 <span>Precio regular:</span>
-                <span className="line-through">${bookedRoom.pricing.totalOriginal} USD</span>
+                <span>${bookedRoom.pricing.totalOriginal} USD (S/ {Math.round(bookedRoom.pricing.totalOriginal * 3.6)} PEN)</span>
               </div>
-              <div className="flex justify-between text-xs text-emerald-300 mb-3">
+              <div className="flex justify-between text-xs text-emerald-300">
                 <span>Ahorro Booking.com (Genius 15%):</span>
-                <span>-${bookedRoom.pricing.savings} USD</span>
+                <span>-${bookedRoom.pricing.savings} USD (-S/ {Math.round(bookedRoom.pricing.savings * 3.6)} PEN)</span>
               </div>
               <div className="flex justify-between items-center text-sm font-bold border-t border-white/10 pt-3">
                 <span>Tarifa Final Estimada:</span>
-                <span className="text-amber-300 text-xl font-extrabold">
-                  ${bookedRoom.pricing.totalDiscounted} USD
-                </span>
+                <div className="text-right">
+                  <div className="text-amber-300 text-xl font-extrabold">
+                    ${bookedRoom.pricing.totalDiscounted} USD
+                  </div>
+                  <div className="text-stone-300 text-xs font-semibold">
+                    S/ {Math.round(bookedRoom.pricing.totalDiscounted * 3.6)} PEN
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -467,9 +476,9 @@ Detalles de la cotización (Web con Tarifas Booking.com):
 - Fecha de Salida: ${checkOut}
 - Noches: ${pricingInfo.nights}
 - Huéspedes: ${adults} Adulto(s) ${parseInt(children) > 0 ? `y ${children} Niño(s)` : ""}
-- Precio Regular Total: $${bookedRoom.pricing.totalOriginal} USD
-- Ahorro Descuentos: -$${bookedRoom.pricing.savings} USD
-- Total Tarifa Final: $${estimatedTotal} USD
+- Precio Regular Total: $${bookedRoom.pricing.totalOriginal} USD (S/ ${Math.round(bookedRoom.pricing.totalOriginal * 3.6)} PEN)
+- Ahorro Descuentos: -$${bookedRoom.pricing.savings} USD (-S/ ${Math.round(bookedRoom.pricing.savings * 3.6)} PEN)
+- Total Tarifa Final: $${estimatedTotal} USD (S/ ${Math.round(estimatedTotal * 3.6)} PEN)
 ${specialRequests.trim() ? `- Pedidos Especiales: ${specialRequests.trim()}\n` : ""}
 Por favor confirmar disponibilidad.`;
 

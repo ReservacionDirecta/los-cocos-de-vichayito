@@ -76,7 +76,7 @@ export default function Home() {
                 </div>
                 <div className="border-t border-stone-100 pt-4 flex justify-between items-center text-xs text-stone-500">
                   <span>👤 Max: 2 Adultos</span>
-                  <span className="font-bold text-emerald-800 text-sm">$85 / noche</span>
+                  <span className="font-bold text-emerald-800 text-sm">$85 (S/ 306) / noche</span>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function Home() {
                 </div>
                 <div className="border-t border-stone-100 pt-4 flex justify-between items-center text-xs text-stone-500">
                   <span>👤 Max: 3 Adultos + 2 Niños</span>
-                  <span className="font-bold text-emerald-800 text-sm">$130 / noche</span>
+                  <span className="font-bold text-emerald-800 text-sm">$130 (S/ 468) / noche</span>
                 </div>
               </div>
             </div>
