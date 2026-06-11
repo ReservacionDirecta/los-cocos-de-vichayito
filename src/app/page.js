@@ -198,11 +198,12 @@ export default function Home() {
           </div>
           <div className="w-full h-[450px] rounded-3xl overflow-hidden border border-stone-200 shadow-md">
             <iframe
-              title="Mapa de Los Cocos de Vichayito"
-              style={{ width: "100%", height: "100%", border: "0" }}
-              src="https://widgets.housity.net/map?lat=-4.164930340647149&lon=-81.12624422952064&tag=exp-map-exp-loscocosdevichayito"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5243.710954204014!2d-81.10788998836583!3d-4.138062795818375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9036924dfc76fc99%3A0x21fa66befe732719!2sLos%20Cocos%20de%20Vichayito!5e1!3m2!1ses!2spe!4v1781193652881!5m2!1ses!2spe"
+              style={{ width: "100%", height: "100%", border: 0 }}
               allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación de Los Cocos de Vichayito"
             ></iframe>
           </div>
         </section>
