@@ -10,6 +10,9 @@ const IMAGES = [
     url: "https://cf.bstatic.com/xdata/images/hotel/max1200/262051000.jpg?k=75e203c0919bfaeb592f7ab550e6ccf8c5c68d8e5ec7205c9c5279474269d38d&o=",
   },
   {
+    url: "/plato-de-ceviche-peruano_0.webp",
+  },
+  {
     url: "https://cf.bstatic.com/xdata/images/hotel/max1200/226844854.jpg?k=51b61877cce93c192c7cd4bb3a92ba4598d1582c2c4c7c04007899674426da42&o=",
   },
   {
