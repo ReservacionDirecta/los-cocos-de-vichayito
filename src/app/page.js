@@ -70,6 +70,7 @@ export default function Home() {
             {/* Card 1 */}
             <div className="bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-lg flex flex-col md:flex-row group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div className="md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://cf.bstatic.com/xdata/images/hotel/max1200/226844854.jpg?k=51b61877cce93c192c7cd4bb3a92ba4598d1582c2c4c7c04007899674426da42&o="
                   alt="Habitación Doble"
@@ -102,6 +103,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-lg flex flex-col md:flex-row group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div className="md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/bungalow_ocean_interior.png"
                   alt="Bungalow Vista Mar"
@@ -138,6 +140,7 @@ export default function Home() {
           className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-stone-100/50 border border-stone-200/50 p-8 md:p-16 rounded-3xl"
         >
           <div className="relative rounded-2xl overflow-hidden h-[400px] shadow-lg group">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/gastronomia.jpg"
               alt="Restaurante y Comedor Frente al Mar"
