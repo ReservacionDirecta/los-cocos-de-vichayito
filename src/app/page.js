@@ -111,7 +111,7 @@ export default function Home() {
         <section id="gastronomia" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-stone-100/50 border border-stone-200/50 p-8 md:p-16 rounded-3xl">
           <div className="relative rounded-2xl overflow-hidden h-[400px] shadow-lg group">
             <img
-              src="https://cf.bstatic.com/xdata/images/hotel/max1200/262051000.jpg?k=75e203c0919bfaeb592f7ab550e6ccf8c5c68d8e5ec7205c9c5279474269d38d&o="
+              src="/gastronomia.jpg"
               alt="Restaurante y Comedor Frente al Mar"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
