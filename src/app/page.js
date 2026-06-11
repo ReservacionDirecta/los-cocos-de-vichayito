@@ -85,7 +85,7 @@ export default function Home() {
             <div className="bg-white border border-stone-200 rounded-3xl overflow-hidden shadow-lg flex flex-col md:flex-row group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div className="md:w-1/2 h-64 md:h-auto relative overflow-hidden">
                 <img
-                  src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/135479658.jpg?k=a973e13085bc03cea718affd2666693c30ee21bc42e1b720c98272286fbc19dc&o="
+                  src="/bungalow_ocean_interior.png"
                   alt="Bungalow Vista Mar"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

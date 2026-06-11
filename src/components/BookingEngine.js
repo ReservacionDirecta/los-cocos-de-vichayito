@@ -18,7 +18,7 @@ const ROOM_TEMPLATES = [
     description: "Acceso directo a la playa de Vichayito y a pocos pasos de la piscina. Terraza privada.",
     maxAdults: 3,
     maxChildren: 2,
-    image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/135479658.jpg?k=a973e13085bc03cea718affd2666693c30ee21bc42e1b720c98272286fbc19dc&o=",
+    image: "/bungalow_ocean_interior.png",
   },
   {
     id: "bungalow-family",
@@ -26,7 +26,7 @@ const ROOM_TEMPLATES = [
     description: "Espacioso bungalow de dos plantas ideal para familias. Sala de estar amplia y balcón con hamaca.",
     maxAdults: 5,
     maxChildren: 3,
-    image: "https://cf.bstatic.com/xdata/images/hotel/max1200/258340766.jpg?k=8de3fe242bc8139baeaf2b2394d44a2a31432ad3fbf1e0dd2108a6114d598bf7&o=",
+    image: "/bungalow_family_interior.png",
   },
   {
     id: "deluxe-beachfront",
@@ -34,7 +34,7 @@ const ROOM_TEMPLATES = [
     description: "Nuestra suite más exclusiva con terraza panorámica, vista completa al océano y piscina privada compartida.",
     maxAdults: 6,
     maxChildren: 4,
-    image: "https://cf.bstatic.com/xdata/images/hotel/max1200/262051000.jpg?k=75e203c0919bfaeb592f7ab550e6ccf8c5c68d8e5ec7205c9c5279474269d38d&o=",
+    image: "/deluxe_beachfront_interior.png",
   },
 ];
 
