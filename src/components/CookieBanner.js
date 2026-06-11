@@ -27,7 +27,7 @@ export default function CookieBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 right-6 md:left-auto md:max-w-md z-50 animate-in slide-in-from-bottom-12 duration-500 ease-out">
+    <div className="fixed bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 md:left-auto md:max-w-md z-50 animate-in slide-in-from-bottom-12 duration-500 ease-out">
       <div className="bg-white/95 backdrop-blur-md border border-stone-200 p-6 rounded-3xl shadow-2xl flex flex-col gap-4">
         <div className="flex items-start gap-3">
           <div className="text-2xl mt-0.5">🍪</div>

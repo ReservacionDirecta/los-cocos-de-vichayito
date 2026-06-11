@@ -31,8 +31,8 @@ export default function RootLayout({ children }) {
     <html lang="es" className={`${poppins.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col font-sans bg-stone-50 text-stone-900 selection:bg-amber-200">
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-stone-200/80">
-          <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="/" className="text-xl md:text-2xl font-bold tracking-tight text-emerald-900 hover:opacity-90 transition-opacity">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="/" className="text-lg sm:text-2xl font-bold tracking-tight text-emerald-900 hover:opacity-90 transition-opacity">
               Los Cocos <span className="font-light text-stone-500">de Vichayito</span>
             </a>
             <nav className="hidden md:flex items-center gap-8">
@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
               </a>
             </nav>
             <div className="flex items-center gap-4">
-              <a href="#booking-section" className="inline-flex h-11 items-center justify-center rounded-full bg-emerald-800 px-6 text-sm font-medium text-white shadow-lg shadow-emerald-900/10 transition-all hover:bg-emerald-900 hover:-translate-y-0.5 active:translate-y-0">
+              <a href="#booking-section" className="inline-flex h-10 sm:h-11 items-center justify-center rounded-full bg-emerald-800 px-4 sm:px-6 text-xs sm:text-sm font-medium text-white shadow-lg shadow-emerald-900/10 transition-all hover:bg-emerald-900 hover:-translate-y-0.5 active:translate-y-0">
                 Reservar
               </a>
             </div>

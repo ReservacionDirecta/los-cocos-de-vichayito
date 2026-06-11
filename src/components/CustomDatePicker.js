@@ -203,7 +203,7 @@ export default function CustomDatePicker({ label, selectedDate, onChange, minDat
 
       {/* Calendar Popover */}
       {isOpen && (
-        <div className="absolute top-[78px] left-0 z-50 w-[300px] bg-white border border-stone-200/90 rounded-2xl p-4 shadow-xl shadow-stone-900/10 transition-all duration-200 ease-out origin-top scale-100 opacity-100 animate-in fade-in zoom-in-95">
+        <div className="absolute top-[78px] left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 z-50 w-[280px] sm:w-[300px] bg-white border border-stone-200/90 rounded-2xl p-4 shadow-xl shadow-stone-900/10 transition-all duration-200 ease-out origin-top scale-100 opacity-100 animate-in fade-in zoom-in-95">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <button

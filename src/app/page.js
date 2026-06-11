@@ -19,17 +19,23 @@ export default function Home() {
             Hotel Boutique y Bungalows
           </span>
           <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-tight select-none">
-            Un Paraíso Escondido en la Playa de Vichayito
+            Un Paraíso Escondido en Vichayito
           </h1>
           <p className="text-stone-100 text-base md:text-lg leading-relaxed max-w-2xl mx-auto opacity-95">
-            Disfruta del sol del norte peruano, nuestra refrescante piscina al aire libre y el susurro constante del océano con acceso directo a la playa.
+            Disfruta del sol del norte peruano, nuestra refrescante piscina al
+            aire libre y el susurro constante del océano con acceso directo a la
+            playa.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4 text-xs font-medium text-stone-200">
             <span className="flex items-center gap-1.5">
               📍 Jose Antonio de Lavalle 182 - Acceso Máncora, Vichayito, Perú
             </span>
             <span className="hidden sm:inline">|</span>
-            <a href="https://wa.me/51963432773" target="_blank" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <a
+              href="https://wa.me/51963432773"
+              target="_blank"
+              className="flex items-center gap-1.5 hover:text-white transition-colors"
+            >
               💬 WhatsApp: +51 963 432 773
             </a>
           </div>
@@ -43,7 +49,10 @@ export default function Home() {
 
       <div className="flex flex-col gap-24 py-12 px-6 max-w-7xl mx-auto w-full">
         {/* Rooms Showcase Section */}
-        <section id="habitaciones" className="scroll-mt-24 flex flex-col gap-12">
+        <section
+          id="habitaciones"
+          className="scroll-mt-24 flex flex-col gap-12"
+        >
           <div className="text-center max-w-xl mx-auto flex flex-col gap-2">
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
               Nuestros Alojamientos
@@ -52,7 +61,8 @@ export default function Home() {
               Habitaciones & Bungalows
             </h2>
             <p className="text-stone-500 text-sm">
-              Diseños amplios de madera y caña con balcones privados y vistas relajantes.
+              Diseños amplios de madera y caña con balcones privados y vistas
+              relajantes.
             </p>
           </div>
 
@@ -68,15 +78,23 @@ export default function Home() {
               </div>
               <div className="md:w-1/2 p-6 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">Zona Jardín (120m del mar)</span>
-                  <h3 className="text-lg font-bold text-stone-900 mt-1 mb-2 group-hover:text-emerald-950">Doble Estándar</h3>
+                  <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
+                    Zona Jardín (120m del mar)
+                  </span>
+                  <h3 className="text-lg font-bold text-stone-900 mt-1 mb-2 group-hover:text-emerald-950">
+                    Doble Estándar
+                  </h3>
                   <p className="text-stone-600 text-xs leading-relaxed mb-4">
-                    Habitación íntima y sumamente tranquila, rodeada de áreas verdes con terraza privada y baño completo con agua caliente.
+                    Habitación íntima y sumamente tranquila, rodeada de áreas
+                    verdes con terraza privada y baño completo con agua
+                    caliente.
                   </p>
                 </div>
                 <div className="border-t border-stone-100 pt-4 flex justify-between items-center text-xs text-stone-500">
                   <span>👤 Max: 2 Adultos</span>
-                  <span className="font-bold text-emerald-800 text-sm">$85 (S/ 306) / noche</span>
+                  <span className="font-bold text-emerald-800 text-sm">
+                    $85 (S/ 306) / noche
+                  </span>
                 </div>
               </div>
             </div>
@@ -92,15 +110,22 @@ export default function Home() {
               </div>
               <div className="md:w-1/2 p-6 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-widest">Frente al Mar (Beachside)</span>
-                  <h3 className="text-lg font-bold text-stone-900 mt-1 mb-2 group-hover:text-emerald-950">Bungalow Vista al Mar</h3>
+                  <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-widest">
+                    Frente al Mar (Beachside)
+                  </span>
+                  <h3 className="text-lg font-bold text-stone-900 mt-1 mb-2 group-hover:text-emerald-950">
+                    Bungalow Vista al Mar
+                  </h3>
                   <p className="text-stone-600 text-xs leading-relaxed mb-4">
-                    A pocos pasos de la piscina infinita y salida directa a la arena. Cuenta con balcón privado y televisión satelital.
+                    A pocos pasos de la piscina infinita y salida directa a la
+                    arena. Cuenta con balcón privado y televisión satelital.
                   </p>
                 </div>
                 <div className="border-t border-stone-100 pt-4 flex justify-between items-center text-xs text-stone-500">
                   <span>👤 Max: 3 Adultos + 2 Niños</span>
-                  <span className="font-bold text-emerald-800 text-sm">$130 (S/ 468) / noche</span>
+                  <span className="font-bold text-emerald-800 text-sm">
+                    $130 (S/ 468) / noche
+                  </span>
                 </div>
               </div>
             </div>
@@ -108,7 +133,10 @@ export default function Home() {
         </section>
 
         {/* Dining / Restaurant Section */}
-        <section id="gastronomia" className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-stone-100/50 border border-stone-200/50 p-8 md:p-16 rounded-3xl">
+        <section
+          id="gastronomia"
+          className="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-stone-100/50 border border-stone-200/50 p-8 md:p-16 rounded-3xl"
+        >
           <div className="relative rounded-2xl overflow-hidden h-[400px] shadow-lg group">
             <img
               src="/gastronomia.jpg"
@@ -124,23 +152,36 @@ export default function Home() {
               Pescado fresco del día y recetas peruanas locales
             </h2>
             <p className="text-stone-600 text-sm md:text-base leading-relaxed">
-              Nuestro restaurante interno ofrece un ambiente relajado y vistas al océano. Disfruta de pescados y mariscos capturados el mismo día, además de los mejores clásicos norteños peruanos.
+              Nuestro restaurante interno ofrece un ambiente relajado y vistas
+              al océano. Disfruta de pescados y mariscos capturados el mismo
+              día, además de los mejores clásicos norteños peruanos.
             </p>
             <ul className="flex flex-col gap-3 text-stone-600 text-sm">
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-700 font-bold">✓</span>
-                <span><strong>Desayuno Continental:</strong> Servido diariamente con frutas frescas de temporada, jugos naturales, café y panes tradicionales.</span>
+                <span>
+                  <strong>Desayuno Continental:</strong> Servido diariamente con
+                  frutas frescas de temporada, jugos naturales, café y panes
+                  tradicionales.
+                </span>
               </li>
               <li className="flex items-start gap-2.5">
                 <span className="text-emerald-700 font-bold">✓</span>
-                <span><strong>Cevichería Norteña:</strong> Saborea el clásico ceviche de pescado fresco preparado al momento con limón de Chulucanas.</span>
+                <span>
+                  <strong>Cevichería Norteña:</strong> Saborea el clásico
+                  ceviche de pescado fresco preparado al momento con limón de
+                  Chulucanas.
+                </span>
               </li>
             </ul>
           </div>
         </section>
 
         {/* Services & Experiences Section */}
-        <section id="experiencias" className="scroll-mt-24 flex flex-col gap-12">
+        <section
+          id="experiencias"
+          className="scroll-mt-24 flex flex-col gap-12"
+        >
           <div className="text-center max-w-xl mx-auto flex flex-col gap-2">
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
               Relajación y Aventura
@@ -149,32 +190,45 @@ export default function Home() {
               Experiencias de Hotel Boutique
             </h2>
             <p className="text-stone-500 text-sm">
-              Diseñamos servicios adicionales para garantizar que tu estadía sea tan activa o pacífica como desees.
+              Diseñamos servicios adicionales para garantizar que tu estadía sea
+              tan activa o pacífica como desees.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-stone-200 p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
               <div className="text-3xl">💆‍♀️</div>
-              <h3 className="text-lg font-bold text-stone-900">Masajes Frente al Mar</h3>
+              <h3 className="text-lg font-bold text-stone-900">
+                Masajes Frente al Mar
+              </h3>
               <p className="text-stone-500 text-sm leading-relaxed">
-                Consiéntete con masajes relajantes y descontracturantes en nuestra cabaña exterior, acompañados del sonido rítmico de las olas de Vichayito.
+                Consiéntete con masajes relajantes y descontracturantes en
+                nuestra cabaña exterior, acompañados del sonido rítmico de las
+                olas de Vichayito.
               </p>
             </div>
 
             <div className="bg-white border border-stone-200 p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
               <div className="text-3xl">🐋</div>
-              <h3 className="text-lg font-bold text-stone-900">Avistamiento de Ballenas</h3>
+              <h3 className="text-lg font-bold text-stone-900">
+                Avistamiento de Ballenas
+              </h3>
               <p className="text-stone-500 text-sm leading-relaxed">
-                Durante la temporada de julio a octubre, coordinamos excursiones guiadas para observar el paso majestuoso de las ballenas jorobadas frente a nuestras costas.
+                Durante la temporada de julio a octubre, coordinamos excursiones
+                guiadas para observar el paso majestuoso de las ballenas
+                jorobadas frente a nuestras costas.
               </p>
             </div>
 
             <div className="bg-white border border-stone-200 p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4">
               <div className="text-3xl">🏄‍♂️</div>
-              <h3 className="text-lg font-bold text-stone-900">Kitesurf y Surf local</h3>
+              <h3 className="text-lg font-bold text-stone-900">
+                Kitesurf y Surf local
+              </h3>
               <p className="text-stone-500 text-sm leading-relaxed">
-                La playa de Vichayito ofrece vientos ideales y oleaje idóneo para la práctica y aprendizaje de deportes acuáticos durante todo el año.
+                La playa de Vichayito ofrece vientos ideales y oleaje idóneo
+                para la práctica y aprendizaje de deportes acuáticos durante
+                todo el año.
               </p>
             </div>
           </div>
@@ -193,7 +247,8 @@ export default function Home() {
               Nuestra Ubicación en Vichayito
             </h2>
             <p className="text-stone-500 text-sm">
-              Disfruta de la privacidad de Vichayito estando a corta distancia de la vibrante Máncora.
+              Disfruta de la privacidad de Vichayito estando a corta distancia
+              de la vibrante Máncora.
             </p>
           </div>
           <div className="w-full h-[450px] rounded-3xl overflow-hidden border border-stone-200 shadow-md">

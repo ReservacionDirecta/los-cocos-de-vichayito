@@ -149,7 +149,7 @@ export default function BookingEngine() {
 
   return (
     <section id="booking-section" className="w-full py-12 scroll-mt-24">
-      <div className="bg-white/80 backdrop-blur-md border border-stone-200/80 rounded-3xl p-8 md:p-12 shadow-xl shadow-stone-900/5 max-w-5xl mx-auto transition-all duration-300 hover:shadow-2xl hover:shadow-stone-900/10">
+      <div className="bg-white/80 backdrop-blur-md border border-stone-200/80 rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl shadow-stone-900/5 max-w-5xl mx-auto transition-all duration-300 hover:shadow-2xl hover:shadow-stone-900/10">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-stone-900 text-center mb-8">
           Encuentra tu Habitación Perfecta
         </h2>
@@ -315,8 +315,8 @@ export default function BookingEngine() {
                       <p className="text-stone-600 text-sm leading-relaxed mb-4">{room.description}</p>
                     </div>
 
-                    <div className="flex items-center justify-between mt-4 border-t border-stone-100 pt-4">
-                      <div className="flex gap-4 text-xs font-semibold text-stone-500">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-4 border-t border-stone-100 pt-4">
+                      <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs font-semibold text-stone-500">
                         <span className="flex items-center gap-1">
                           👤 Max: {room.maxAdults}
                         </span>
@@ -327,7 +327,7 @@ export default function BookingEngine() {
 
                       <button
                         onClick={() => handleBookRoom(room)}
-                        className="px-5 py-2.5 bg-emerald-800 hover:bg-emerald-950 text-white rounded-xl text-xs font-semibold transition-all duration-200 active:scale-95 hover:shadow-md hover:shadow-emerald-800/10"
+                        className="w-full sm:w-auto px-5 py-2.5 bg-emerald-800 hover:bg-emerald-950 text-white rounded-xl text-xs font-semibold text-center transition-all duration-200 active:scale-95 hover:shadow-md hover:shadow-emerald-800/10"
                       >
                         Reservar por WhatsApp
                       </button>
@@ -343,7 +343,7 @@ export default function BookingEngine() {
       {/* Booking Confirmation Dialog */}
       {bookedRoom && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm transition-opacity duration-300">
-          <div className="bg-white rounded-3xl max-w-xl w-full p-8 shadow-2xl relative border border-stone-200 animate-in zoom-in-95 slide-in-from-bottom-8 duration-300 overflow-y-auto max-h-[90vh]">
+          <div className="bg-white rounded-3xl max-w-xl w-full p-5 sm:p-8 shadow-2xl relative border border-stone-200 animate-in zoom-in-95 slide-in-from-bottom-8 duration-300 overflow-y-auto max-h-[90vh]">
             <button
               onClick={() => {
                 setBookedRoom(null);
@@ -371,29 +371,29 @@ export default function BookingEngine() {
               <div className="p-4 flex flex-col gap-3 text-sm">
                 <div className="flex justify-between items-center">
                   <span className="text-stone-500 text-xs">Habitación:</span>
-                  <span className="font-semibold text-stone-800 text-right max-w-[70%]">{bookedRoom.name}</span>
+                  <span className="font-semibold text-stone-800 text-right max-w-[70%] text-xs sm:text-sm">{bookedRoom.name}</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4 border-t border-stone-200/60 pt-3">
                   <div>
                     <span className="text-stone-500 text-[10px] uppercase tracking-wider block">Entrada</span>
-                    <span className="font-medium text-stone-800">{checkIn}</span>
+                    <span className="font-medium text-stone-800 text-xs sm:text-sm">{checkIn}</span>
                   </div>
                   <div>
                     <span className="text-stone-500 text-[10px] uppercase tracking-wider block">Salida</span>
-                    <span className="font-medium text-stone-800">{checkOut}</span>
+                    <span className="font-medium text-stone-800 text-xs sm:text-sm">{checkOut}</span>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4 border-t border-stone-200/60 pt-3">
                   <div>
                     <span className="text-stone-500 text-[10px] uppercase tracking-wider block">Duración</span>
-                    <span className="font-medium text-stone-800">
+                    <span className="font-medium text-stone-800 text-xs sm:text-sm">
                       {pricingInfo.nights} {pricingInfo.nights === 1 ? "noche" : "noches"}
                     </span>
                   </div>
                   <div>
                     <span className="text-stone-500 text-[10px] uppercase tracking-wider block">Huéspedes</span>
-                    <span className="font-medium text-stone-800">
-                      {adults} Adulto(s) {parseInt(children) > 0 ? `y ${children} Niño(s)` : ""}
+                    <span className="font-medium text-stone-800 text-xs sm:text-sm">
+                      {adults} Ad. {parseInt(children) > 0 ? `y ${children} Niñ.` : ""}
                     </span>
                   </div>
                 </div>
@@ -425,20 +425,20 @@ export default function BookingEngine() {
                   id="special-req"
                   value={specialRequests}
                   onChange={(e) => setSpecialRequests(e.target.value)}
-                  placeholder="Ej: Camas separadas, cuna para bebé, llegada tardía..."
+                  placeholder="Ej: Camas separadas, cuna para bebé..."
                   className="p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm bg-stone-50 resize-none h-16"
                 />
               </div>
             </div>
 
             {/* Pricing Section */}
-            <div className="bg-emerald-950 text-white rounded-2xl p-5 mb-6 shadow-md flex flex-col gap-1.5">
+            <div className="bg-emerald-950 text-white rounded-2xl p-4 sm:p-5 mb-6 shadow-md flex flex-col gap-1.5">
               <div className="flex justify-between text-xs text-stone-300">
                 <span>Precio regular:</span>
                 <span>${bookedRoom.pricing.totalOriginal} USD (S/ {Math.round(bookedRoom.pricing.totalOriginal * 3.6)} PEN)</span>
               </div>
               <div className="flex justify-between text-xs text-emerald-300">
-                <span>Ahorro Booking.com (Genius 15%):</span>
+                <span>Ahorro Genius (15%):</span>
                 <span>-${bookedRoom.pricing.savings} USD (-S/ {Math.round(bookedRoom.pricing.savings * 3.6)} PEN)</span>
               </div>
               <div className="flex justify-between items-center text-sm font-bold border-t border-white/10 pt-3">
@@ -454,7 +454,7 @@ export default function BookingEngine() {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => {
                   if (!guestName.trim()) {
@@ -490,9 +490,9 @@ Por favor confirmar disponibilidad.`;
                   setGuestName("");
                   setSpecialRequests("");
                 }}
-                className="flex-1 py-3 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl font-semibold text-sm text-center shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+                className="w-full sm:flex-1 py-3 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl font-semibold text-sm text-center shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
               >
-                Solicitar Reserva por WhatsApp
+                Solicitar por WhatsApp
               </button>
               <button
                 onClick={() => {
@@ -500,7 +500,7 @@ Por favor confirmar disponibilidad.`;
                   setGuestName("");
                   setSpecialRequests("");
                 }}
-                className="px-6 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-semibold text-sm transition-colors"
+                className="w-full sm:w-auto px-6 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-xl font-semibold text-sm text-center transition-colors"
               >
                 Cancelar
               </button>
